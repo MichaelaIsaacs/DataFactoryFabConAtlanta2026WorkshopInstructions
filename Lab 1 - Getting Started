@@ -1,4 +1,4 @@
-# Lab 1 – Setting up your workspace for Medallion Processing
+#Lab 1 – Setting up your workspace for Medallion Processing
 
 Set up your Lakehouse and Warehouse for the Medallion architecture with secure boundaries.
 
@@ -51,7 +51,7 @@ d```
 Your environment is now fully prepared for all future labs.
 
 ### By the end of this lab, you have:
-t- A Lakehouse set up for the Landing (Bronze) layer
+- A Lakehouse set up for the Landing (Bronze) layer
 - A Warehouse ready for Silver/Gold transformations
 - A metadata SQL Database containing Pipeline and Dataflow tracking tables for later pipeline and orchestration work.
 
