@@ -21,12 +21,12 @@ In this lab, you will prepare the core data assets used throughout the workshop.
 
 ## Create a Fabric SQL Database to store metadata
 Now we will add a Fabric SQL Database to store metadata. This will be useful in our pipelines and orchestration procedures selected later today.
-1. At the top of the workspace, click on **New Item**. ![alt text](Lab1Photos/11.png)
-2. Search for and select **SQL Database**, then name it **“ZavaMetadataDB”**, and click **Create**. Fabric will provision the SQL Database. ![alt text](Lab1Photos/12.png)
-3. Within the "Build your database" scroll, select `T-SQL`. ![alt text](Lab1Photos/13.png)
+1. At the top of the workspace, click on **New Item**. ![alt text](Lab1Photos/12.png)
+2. Search for and select **SQL Database**, then name it **“ZavaMetadataDB”**, and click **Create**. Fabric will provision the SQL Database. ![alt text](Lab1Photos/13.png)
+3. Within the "Build your database" scroll, select `T-SQL`. ![alt text](Lab1Photos/14.png)
 
 ## Populate the Metadata tables
-1. Now let’s populate these tables. Within T-SQL for `ZavaMetadataDB`, click on **new query**. ![alt text](Lab1Photos/14.png)
+1. Now let’s populate these tables. Within T-SQL for `ZavaMetadataDB`, click on **new query**. ![alt text](Lab1Photos/15.png)
 2. Paste the following metadata SQL script into the query:
 ```sql
 --Please note that query name does not matter here. You can name the query as you see fit.
@@ -44,7 +44,7 @@ VALUES
 
 SELECT * FROM metadata;
 ```
-3. Hit **run**. After hitting run, wait for the script to successfully finish; you should see that it succeeded on the bottom UI (left corner). ![alt text](Lab1Photos/15.png)
+3. Hit **run**. After hitting run, wait for the script to successfully finish; you should see that it succeeded on the bottom UI (left corner). ![alt text](Lab1Photos/16.png)
 
 ---
 
