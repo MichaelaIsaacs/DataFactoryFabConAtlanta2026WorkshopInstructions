@@ -11,7 +11,7 @@ In this lab, you will prepare the core data assets used throughout the workshop.
 4. Please select **Power BI Premium** as your workspace. ![alt text](Lab1Photos/2.png)
 5. Please confirm and select via the drop-down that you have access to this capacity **fabcon-gen-westus-p2-0***. ![alt text](Lab1Photos/3.png)
 6. Click **apply**. ![alt text](Lab1Photos/4.png)
-7. Click **Select a predesignated task flow**, then choose **Medallion** and click **select**. !\\\[alt text\\\](Lab1Photos/5.png) ![alt text](Lab1Photos/6.png)
+7. Click **Select a predesignated task flow**, then choose **Medallion** and click **select**. ![alt text](Lab1Photos/5.png) ![alt text](Lab1Photos/6.png)
 8. You should now see a templated medallion flow in your UI. ![alt text](Lab1Photos/7.png)
 9. Under your **Bronze Data Icon**, select **New Item**. ![alt text](Lab1Photos/8.png)
 10. Select the **Lakehouse** item and name it **“ZavaBronzeLakehouse”**. Click **Create**. ![alt text](Lab1Photos/9.png)
