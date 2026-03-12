@@ -8,7 +8,7 @@ In this lab, you will prepare the core data assets used throughout the workshop.
 1. Begin in [https://fabric.microsoft.com](https://fabric.microsoft.com). Please create your own workspace – you should already be provisioned a Fabric capacity for the purpose of this lab.
 2. To do so, please click **"New workspace"**. ![alt text](Lab1Photos/1.png)
 3. Please name your workspace **"zava_analytics[_yourusername]"** (for the purpose of the lab screenshots, we will just be naming our workspace **zava_analytics**).
-4. Please select **Power BI Premium** as your workspace. ![alt text](Lab1Photos/2.png)
+4. Please select **Power BI Premium** as your workspace. ![alt text](Lab1Photos/2.png) /Users/michaelaisaacs/Desktop/DataFactoryFabConAtlanta2026WorkshopInstructions/Lab1Photos/try.png Lab1Photos/try.png
 5. Please confirm and select via the drop-down that you have access to this capacity **fabcon-gen-westus-p2-0***. ![alt text](Lab1Photos/3.png)
 6. Click **apply**. ![alt text](Lab1Photos/4.png)
 7. Click **Select a predesignated task flow**, then choose **Medallion** and click **select**. !\\\[alt text\\\](Lab1Photos/5.png) ![alt text](Lab1Photos/6.png)
