@@ -26,43 +26,29 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 
 7. Enter the following values:
 
-\-**URL**: \`https://zavarawdata1.dfs.core.windows.net/\`
-
-\-**Connection name**: Keep the auto-populated value
-
-\- Check **The connection can be used with on-premises data gateways and VNet Gateways**
-
-\- Click **Next**
+    -**URL**: \`https://zavarawdata1.dfs.core.windows.net/\`
+    -**Connection name**: Keep the auto-populated value
+    - Check **The connection can be used with on-premises data gateways and VNet Gateways**
+    - Click **Next**
 
 8. Expand the \`zavarawdata\` folder, then expand the \`v1\` folder.
-
-\- Select all tables within the CSV files
-
-\-**Do not select** the \`flag\` folder
+    - Select all tables within the CSV files
+        -**Do not select** the \`flag\` folder
 
 9. Click **Advanced settings**.
 
 10. Select **Audit columns** and configure the following:
 
-\-**Name**: \`\_ingestion\_timestamp\`
-
-\-**Value**: \`$$NOW\`
-
-\-**Name**: \`\_source\_file\`
-
-\-**Value**: \`Custom\`
-
-\-**Right-hand textbox**: \`products.csv\`
-
-\-**Name**: \`\_batch\_id\`
-
-\-**Value**: \`$$COPYJOBID\`
-
-\-**Name**: \`\_is\_deleted\`
-
-\-**Value**: \`Custom\`
-
-\-**Right-hand textbox**: \`false\`
+    -**Name**: \`\_ingestion\_timestamp\`
+    -**Value**: \`$$NOW\`
+    -**Name**: \`\_source\_file\`
+    -**Value**: \`Custom\`
+    -**Right-hand textbox**: \`products.csv\`
+    -**Name**: \`\_batch\_id\`
+    -**Value**: \`$$COPYJOBID\`
+    -**Name**: \`\_is\_deleted\`
+    -**Value**: \`Custom\`  
+    -**Right-hand textbox**: \`false\`
 
 \---
 
