@@ -17,7 +17,7 @@ In this lab, you will prepare the core data assets used throughout the workshop.
 10. Select the **Lakehouse** item and name it **“ZavaBronzeLakehouse”**. Click **Create**. ![alt text](Lab1Photos/9.png)
 11. Once added, return to your workspace.
 12. Select from **Silver Data icon** in the medallion flow, then choose **New Item**. ![alt text](Lab1Photos/10.png)
-13. Choose a **Warehouse**, name it **“ZavaWarehouse”**, and click **create**.![alt text](Lab1Photos/10.png)
+13. Choose a **Warehouse**, name it **“ZavaWarehouse”**, and click **create**.![alt text](Lab1Photos/11.png)
 
 ## Create a Fabric SQL Database to store metadata
 Now we will add a Fabric SQL Database to store metadata. This will be useful in our pipelines and orchestration procedures selected later today.
