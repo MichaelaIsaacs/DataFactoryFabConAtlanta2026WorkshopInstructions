@@ -1,0 +1,39 @@
+# Lab 3 – Using Dataflow Gen2 for Bronze to Silver Conversion
+
+In this lab, you will build a Dataflow Gen2 that transforms your Zava Bronze data into silver data. There are two ways you can transform your data: one using Copilot to accelerate development, and the other using UI steps.
+
+The Dataflow will write the silver output to a Fabric Data Warehouse.
+
+Your workspace already includes:
+    - Workspace Identity (enabled in Lab 1)
+    - Bronze data (via Copy in Lab 2)
+    - A Fabric Data Warehouse (created in Lab 1)
+
+---
+
+## 1. Create a New Dataflow Gen2
+
+1. Go to **Initial Process**. Select **New Item**.
+2. Select **Dataflow Gen2**.
+3. Name it **ZavaDataflowGen2** and select **Create**.
+4. Select **Get data from another source**, and search for your ADLS bronze Lakehouse named **ZavaADLSbronzelakehouse**. You may have to search for it.
+5. Select all the tables and click **Create**. Your data should be landed in the interface.
+6. Click **Create**.
+7. You should see the data tables landed within the interface.
+
+We will now begin conducting transformations to turn this data from bronze to silver. There are two different ways we can do so: with Copilot and with the UI. We will try both.
+
+---
+
+## 2. Method One – Build the Transformation with Copilot
+
+1. Select **Copilot** from the Dataflow authoring sidebar.
+
+---
+
+### Copilot Transformation #1: Fix Negative Values
+
+1. Go to the **retail_order_items** table in the left query bar.
+2. Select the **quantity** column.
+3. Open Copilot and submit:
+
