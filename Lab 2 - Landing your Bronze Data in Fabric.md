@@ -15,7 +15,6 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 
 4. Select **Copy job**, name it \`Zavadataadlscopyjob\`, and click **Create**.![alttext](Screenshots/Lab2/5.png)
 
-\---
 
 ### Configure the Data Source
 
