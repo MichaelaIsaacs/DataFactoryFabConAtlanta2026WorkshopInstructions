@@ -8,9 +8,9 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 
 ### Create and Configure the Source (ADLS Gen2)
 
-1. Under the **Bronze data medallion** item, click **New item** and select **Lakehouse**. !\[alt text\](Lab2/1.png)
+1. Under the **Bronze data medallion** item, click **New item** and select **Lakehouse**. ![alttext](Lab1/1.png)
 
-2. Name the Lakehouse \`ZavaADLSbronzelakehouse\` and click **Create**.
+2. Name the Lakehouse \`ZavaADLSbronzelakehouse\` and click **Create**. 
 
 3. Go back to your workspace. Under **High-volume data ingestion**, click **New item**.
 
