@@ -8,34 +8,34 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 
 ### Create and Configure the Source (ADLS Gen2)
 
-1. Under the **Bronze data medallion** item, click **New item** and select **Lakehouse**.![alttext](Lab1/1.png)
+1. Under the **Bronze data medallion** item, click **New item** and select **Lakehouse**.![alttext](Screenshots/Lab2/1.png) ![alttext](Screenshots/Lab2/2.png)
 
-2. Name the Lakehouse \`ZavaADLSbronzelakehouse\` and click **Create**. 
+2. Name the Lakehouse \`ZavaADLSbronzelakehouse\` and click **Create**. ![alttext](Screenshots/Lab2/3.png)
 
-3. Go back to your workspace. Under **High-volume data ingestion**, click **New item**.
+3. Go back to your workspace. Under **High-volume data ingestion**, click **New item**. ![alttext](Screenshots/Lab2/4.png)
 
-4. Select **Copy job**, name it \`Zavadataadlscopyjob\`, and click **Create**.
+4. Select **Copy job**, name it \`Zavadataadlscopyjob\`, and click **Create**.![alttext](Screenshots/Lab2/5.png)
 
 \---
 
 ### Configure the Data Source
 
-5. Click **New** to configure your data source.
+5. Click **New** to configure your data source. ![alttext](Screenshots/Lab2/6.png)
 
-6. Search for **Azure Data Lake Storage Gen2** and select it.
+6. Search for **Azure Data Lake Storage Gen2** and select it. ![alttext](Screenshots/Lab2/7.png)
 
 7. Enter the following values:
 
     - **URL**: \`https://zavarawdata1.dfs.core.windows.net/\`
     - **Connection name**: Keep the auto-populated value
     - Check **The connection can be used with on-premises data gateways and VNet Gateways**
-    - Click **Next**
+    - Click **Next** ![alttext](Screenshots/Lab2/8.png)
 
 8. Expand the \`zavarawdata\` folder, then expand the \`v1\` folder.
     - Select all tables within the CSV files
-        - **Do not select** the \`flag\` folder
+        - **Do not select** the \`flag\` folder ![alttext](Screenshots/Lab2/9.png)
 
-9. Click **Advanced settings**.
+9. Click **Advanced settings**. ![alttext](Screenshots/Lab2/10.png)
 
 10. Select **Audit columns** and configure the following:
 
@@ -49,18 +49,18 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
     - **Name**: \`\_is\_deleted\`
     - **Value**: \`Custom\`  
     - **Right-hand textbox**: \`false\`
-
+    ![alttext](Screenshots/Lab2/11.png)
 \---
 
 ### Configure Destination and Run
 
-11. Select \`ZavaADLSbronzelakehouse\` as the output destination.
+11. Select \`ZavaADLSbronzelakehouse\` as the output destination. ![alttext](Screenshots/Lab2/12.png)
 
-12. Choose ***Incremental copy** to detect and ingest all incremental changes, then click **Next**.
+12. Choose ***Incremental copy** to detect and ingest all incremental changes, then click **Next**. ![alttext](Screenshots/Lab2/13.png)
 
-13. Under **Table mapping**, edit the schema name to \`retail\`, then click **Next**.
+13. Under **Table mapping**, edit the schema name to \`retail\`, then click **Next**. ![alttext](Screenshots/Lab2/14.png)
 
-14. Review the configuration and select **Save + Run**.
+14. Review the configuration and select **Save + Run**. ![alttext](Screenshots/Lab2/15.png)
 
 15. Select **Run**.
 
@@ -74,7 +74,7 @@ The workshop monitors will notify you when it is time to proceed.
 
 Once you receive the go-ahead:
 
-1. Run the Copy Job again by selecting **Run**.
+1. Run the Copy Job again by selecting **Run**. ![alttext](Screenshots/Lab2/16.png)
 
 2. Only CDC changes should now be copied from ADLS Gen2 into the Lakehouse.
 
