@@ -24,7 +24,7 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 
 7. Enter the following values:
 
-    - **URL**: \https://zavarawdata1.dfs.core.windows.net/
+    - **URL**: https://zavarawdata1.dfs.core.windows.net/
     - **Connection name**: Keep the auto-populated value
     - Check **The connection can be used with on-premises data gateways and VNet Gateways**
     - Click **Next** ![alttext](Screenshots/Lab2/8.png)
@@ -40,15 +40,15 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 10. Select **Audit columns** and configure the following:
 
     - **Name**: \`\_ingestion\_timestamp\`
-    -    **Value**: \`$$NOW\`
+        - **Value**: \`$$NOW\`
     - **Name**: \`\_source\_file\`
-    -   **Value**: \`Custom\`
-    -   **Right-hand textbox**: \`products.csv\`
+        - **Value**: \`Custom\`
+        - **Right-hand textbox**: \`products.csv\`
     - **Name**: \`\_batch\_id\`
-    -    **Value**: \`$$COPYJOBID\`
+         - **Value**: \`$$COPYJOBID\`
     - **Name**: \`\_is\_deleted\`
-    -   **Value**: \`Custom\`  
-    -   **Right-hand textbox**: \`false\`
+        - **Value**: \`Custom\`  
+        - **Right-hand textbox**: \`false\`
    
 ![alttext](Screenshots/Lab2/11.png)
 
@@ -67,7 +67,7 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 
 16. Your data should now successfully use the Copy Job to ingest Bronze data from ADLS Gen2 into your \`ZavaADLSbronzelakehouse\`.
 
-
+![alttext](Screenshots/Lab2/17.png)
 
 ## Testing CDC Behavior
 
@@ -75,9 +75,9 @@ The workshop monitors will notify you when it is time to proceed. The monitors w
 
 Once you receive the go-ahead from the workshop monitors:
 
-1. Run the Copy Job again by selecting **Run**. ![alttext](Screenshots/Lab2/16.png)
+1. Run the Copy Job again by selecting **Run**. 
 
-2. Only CDC changes should now be copied from ADLS Gen2 into the Lakehouse.
+2. Only CDC changes should now be copied from ADLS Gen2 into the Lakehouse. ![alttext](Screenshots/Lab2/16.png)
 
 
 ## ✅ Your Bronze Layer Is Now Fully Operational
