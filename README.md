@@ -26,7 +26,7 @@ The labs require the following setup in Microsoft Fabric:
 
 ---
 
-## Getting Started and Architecture Setup [Lab 1](Lab 1 - Getting Started.md)
+## Getting Started and Architecture Setup [Lab 1](/Users/michaelaisaacs/Desktop/DataFactoryFabConAtlanta2026WorkshopInstructions/Lab 1 - Getting Started.md)
 
 In **Lab 1**, you set up the foundation used throughout the workshop.
 
