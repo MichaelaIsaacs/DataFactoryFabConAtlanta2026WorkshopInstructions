@@ -53,6 +53,7 @@ At this point, the bronze data has been ingested into the Dataflow Gen2 editor. 
 
 1. Remaining in the retail_order_items table, select the line_total column.
 2. Open **Copilot** and submit the following prompt:"Create a column called RevenueTier with values: Small if LineTotal < 100, Medium if LineTotal between 100 and 1000, Large if greater than 1000."
+
 ![alttext](Screenshots/Lab3/9.png)
 
 3. Verify that the RevenueTier column appears in the table.
