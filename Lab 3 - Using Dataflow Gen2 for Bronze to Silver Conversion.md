@@ -111,9 +111,9 @@ Add \`silver\_\` to the beginning of each existing table name and add \`\_\` bet
 
 4. Select **Bind selected queries**. ![alttext](Screenshots/Lab3/24.png)
 
-5. Select **Save & Run** in the upper-left corner to save and run your Dataflow Gen2.
+5. Select **Save & Run** in the upper-left corner to save and run your Dataflow Gen2. ![alttext](Screenshots/Lab3/25.png)
 
-\- The data will now flow seamlessly from bronze to silver with transformations applied. ![alttext](Screenshots/Lab3/25.png)
+\- The data will now flow seamlessly from bronze to silver with transformations applied. 
 
 6. Go to **ZavaWarehouse** and confirm that the silver data has landed.
 
