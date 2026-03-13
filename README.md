@@ -1,6 +1,7 @@
 # Microsoft Fabric
 
 # FabCon Labs 1–6: Data Integration with Microsoft Fabric
+!\[alttext\](Screenshots/Lab1Photos/MainPhoto.png)
 
 ## Introduction
 
