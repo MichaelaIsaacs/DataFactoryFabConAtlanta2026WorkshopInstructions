@@ -26,7 +26,7 @@ The labs require the following setup in Microsoft Fabric:
 
 ---
 
-## Getting Started and Architecture Setup [Lab 1](/Users/michaelaisaacs/Desktop/DataFactoryFabConAtlanta2026WorkshopInstructions/Lab 1 - Getting Started.md)
+## Getting Started and Architecture Setup (Lab 1)
 
 In **Lab 1**, you set up the foundation used throughout the workshop.
 
@@ -39,7 +39,7 @@ This lab provides the structural context for all subsequent labs.
 
 ---
 
-## Ingesting Data into the Bronze Layer [Lab 2](Lab 2 - Landing your Bronze Data in Fabric.md)
+## Ingesting Data into the Bronze Layer (Lab 2)
 
 In **Lab 2**, you focus on ingesting raw data into Fabric.
 
