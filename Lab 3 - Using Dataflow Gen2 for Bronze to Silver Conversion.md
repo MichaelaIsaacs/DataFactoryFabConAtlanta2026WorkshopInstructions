@@ -44,9 +44,7 @@ At this point, the bronze data has been ingested into the Dataflow Gen2 editor. 
 
 1. In the left query pane, select the retail_order_items table.
 2. Select the quantity column.
-3. Open Copilot and submit the following prompt:
-
-Replace all negative values in the Quantity column with null. 
+3. Open Copilot and submit the following prompt: "Replace all negative values in the Quantity column with null."
 ![alttext](Screenshots/Lab3/8.png)
 
 4. Confirm the transformation is applied successfully.
@@ -54,9 +52,7 @@ Replace all negative values in the Quantity column with null.
 ### Copilot Transformation: Create Revenue Buckets
 
 1. Remaining in the retail_order_items table, select the line_total column.
-2. Open **Copilot** and submit the following prompt:
-
-Create a column called RevenueTier with values: Small if LineTotal < 100, Medium if LineTotal between 100 and 1000, Large if greater than 1000. 
+2. Open **Copilot** and submit the following prompt:"Create a column called RevenueTier with values: Small if LineTotal < 100, Medium if LineTotal between 100 and 1000, Large if greater than 1000."
 ![alttext](Screenshots/Lab3/9.png)
 
 3. Verify that the RevenueTier column appears in the table.
@@ -73,9 +69,9 @@ Create a column called RevenueTier with values: Small if LineTotal < 100, Medium
 
 Configure the AI Prompt with the following values:
     - **New column name**: Clean_PhoneNumbers
-    - **Selected column**: phone
+    - **Selected column**: phone (Ensure only the phone column is selected)
     - **Prompt text**: Standardize PhoneNumber column into (XXX) XXX-XXXX format and remove non-numeric characters.
-- Ensure only the phone column is selected.
+
 
 5. Select **OK** and confirm the new column is created. 
 ![alttext](Screenshots/Lab3/13.png) ![alttext](Screenshots/Lab3/14.png)
@@ -122,17 +118,18 @@ Configure the AI Prompt with the following values:
 
 1. Let’s denote these tables as **silver**. 
 
-    \- Right-click on the tables in the left UI pane and select **Rename**. 
+    Right-click on the tables in the left UI pane and select **Rename**. 
     ![alttext](Screenshots/Lab3/21.png). 
-    Add \`silver\_\` to the beginning of each existing table name and add \`\_\` between all spaces.![alttext](Screenshots/Lab3/22.png)
+    Add \`silver\_\` to the beginning of each existing table name and add \`\_\` between all spaces.
     
-    \- Example: rename **retail customers** to **silver\_retail\_customers**.
-    \- Zoom in on the left UI panel and verify all tables match this naming pattern exactly.
+    ![alttext](Screenshots/Lab3/22.png)
+    
+    Example: rename **retail customers** to **silver\_retail\_customers**. Zoom in on the left UI panel and verify all tables match this naming pattern exactly.
 
 2. In the left UI panel (Named Queries), select **all tables**.
 
-    \- With all tables selected, go to the **Home** tab in Dataflow Gen2.
-    \- Select **Default data destination** and click **Add**. 
+    - With all tables selected, go to the **Home** tab.
+    - Select **Default data destination** and click **Add**. 
     ![alttext](Screenshots/Lab3/23.png)
 
 3. Select your silver warehouse: **ZavaWarehouse**.
@@ -142,12 +139,12 @@ Configure the AI Prompt with the following values:
 ![alttext](Screenshots/Lab3/25.png)
 
 5. Select **Save & Run** in the upper-left corner to save and run your Dataflow Gen2. 
-    \- The data will now flow seamlessly from bronze to silver with transformations applied. 
+    -  The data will now flow seamlessly from bronze to silver with transformations applied. 
     ![alttext](Screenshots/Lab3/26.png)
 
 6. Go to **ZavaWarehouse** and confirm that the silver data has landed.
 
-    \- Verify that the correct table naming is reflected.
+    - Verify that the correct table naming is reflected.
 
 
 
