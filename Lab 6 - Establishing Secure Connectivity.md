@@ -2,7 +2,7 @@
 
 In this lab, you will validate how Microsoft Fabric enforces network isolation using **VNet Data Gateway** and **Outbound Access Protection (OAP)**.
 
----
+
 
 ## Test Your Connection Failure
 
@@ -13,7 +13,7 @@ Now, the lab moderators have secured the connection to protect the sources. Your
 3. Click **Run** in the upper UI ribbon.
 4. Within the monitoring pane, you should see that the Copy Job has **failed**.![alttext](Screenshots/Lab6/1.png)
 
----
+
 
 ## Establish VNet for Your ADLS Source
 
@@ -27,19 +27,18 @@ Let’s fix this by connecting to a pre-shared **VNet Data Gateway** to enable s
    - If you do not see it, please let your moderator know.![alttext](Screenshots/Lab6/4.png)
 3. Create a new connection using this pre-shared VNet Gateway.
    - Click **New** in the upper-left corner.![alttext](Screenshots/Lab6/5.png)
-4. Select **Virtual Network** and fill in the following information (reference the lab screenshot for the completed example):
+4. Select **Virtual Network** and fill in the following information (see screenshot below):
 
    a. **Gateway cluster name**: `DILabVNetGateway`  
    b. **Connection name**: `https://zavarawdata1.dfs.core.windows.net/`  
    c. **Server**: `https://zavarawdata1.dfs.core.windows.net/`  
    d. **Full path**: `/`  
-   e. **Authentication**: OAuth 2.0  
-      - Click **Edit credentials** and sign in when prompted to validate your account.  
+   e. **Authentication**: OAuth 2.0. Click **Edit credentials** and sign in when prompted to validate your account.  
    f. **Privacy level**: Organizational
    ![alttext](Screenshots/Lab6/6.png)
 5. Click **Create**.
 
----
+
 
 ## Update Your Copy Job to Use the VNet Connection
 
@@ -53,7 +52,7 @@ Let’s fix this by connecting to a pre-shared **VNet Data Gateway** to enable s
    - Click **Run** in the upper-left corner.
    - Confirm that your Copy Job now runs **successfully**.
 
----
+
 
 ## Enable Outbound Access Protection (OAP)
 
@@ -72,7 +71,7 @@ Now, let’s enable **Outbound Access Protection (OAP)** to prevent data exfiltr
    - Select your shared VNet Gateway.
 8. Click **Save**.
 
----
+
 
 ## Test & Validate
 

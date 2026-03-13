@@ -185,4 +185,5 @@ Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
     * Add a **ForEach activity** on success by clicking the green arrow within the Lookup acgivity.![alttext](Screenshots/Lab5/38.png)
     * Inside the ForEach, add an **If Condition activity** with the expression: `@equals(item().run_gold, true)`.![alttext](Screenshots/Lab5/38.png)
     * In the **True** branch, add the `03_Gold_Aggregation_Notebook` activity and add base parameters.![alttext](Screenshots/Lab5/39.png)
-6.  **Validate**: Save and run the pipeline.![alttext](Screenshots/Lab5/40.png). If you'd like, you can validate the gold output (US 300, EU 350) and audit log in the Lakehouse.
+6.  **Validate**: Save and run the pipeline.![alttext](Screenshots/Lab5/40.png)
+If you'd like, you can validate the gold output (US 300, EU 350) and audit log in the Lakehouse.
