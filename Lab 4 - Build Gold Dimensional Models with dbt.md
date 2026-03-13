@@ -16,13 +16,11 @@ This process involves standardizing logic, deduplicating records, and calculatin
 
 5. Select the provided workshop dbt project zip file named **fabric\_retail\_gold\_dbt.zip\** and complete the import.
 
-Download: [Fabric Retail Gold dbt assets](Screenshots/fabric\_retail\_gold\_dbt.zip)
-
-\`\` and complete the import.
+Download: [Fabric Retail Gold dbt assets](Screenshots/fabric\_retail\_gold\_dbt.zip) and complete the import.
 
 6. To confirm a successful import, verify that SQL models appear in the left pane of the dbt editor.![alttext](Screenshots/Lab4/4.png)
 
-## Review the dbt Project Transformations
+## Understand the dbt Project Transformations
 
 Within the imported dbt project, the following transformations are configured.
 
@@ -83,6 +81,7 @@ The project is configured to ensure all data lands in the correct schemas automa
 
     - Source Mapping: \`sources.yml\` defines the silver schema as the starting point for all dbt models
 
+
 ## Configure the dbt Job in Fabric
 
 1. Open the dbt job configuration pane.![alttext](Screenshots/Lab4/5.png)
@@ -107,12 +106,12 @@ The project is configured to ensure all data lands in the correct schemas automa
 ## Create a Semantic Model on Gold Data
 Now you will create a semantic model over the Gold layer.
 
-    1. Go back to your workspace and select **+ New Item**.![alttext](Screenshots/Lab4/12.png)
-    2. Search for **Semantic Model** and select it. ![alttext](Screenshots/Lab4/13.png)
-    3. Choose **OneLake Catalog** to add data.![alttext](Screenshots/Lab4/14.png)
-    4. Select **ZavaWarehouse** and click **Connect**.![alttext](Screenshots/Lab4/15.png)
-    5. Name the semantic model **ZavaDataSemanticModel**. Select all Gold tables and click **Confirm**. ![alttext](Screenshots/Lab4/16.png)
-    7. The semantic model will open automatically, confirming successful creation.![alttext](Screenshots/Lab4/17.png)
+1. Go back to your workspace and select **+ New Item**.![alttext](Screenshots/Lab4/12.png)
+2. Search for **Semantic Model** and select it. ![alttext](Screenshots/Lab4/13.png)
+3. Choose **OneLake Catalog** to add data.![alttext](Screenshots/Lab4/14.png)
+4. Select **ZavaWarehouse** and click **Connect**.![alttext](Screenshots/Lab4/15.png)
+5. Name the semantic model **ZavaDataSemanticModel**. Select all Gold tables and click **Confirm**. ![alttext](Screenshots/Lab4/16.png)
+7. The semantic model will open automatically, confirming successful creation.![alttext](Screenshots/Lab4/17.png)
 
 ## Lab Completion
 You have now imported an existing dbt project into Fabric, created gold-layer dimensional and fact models, configured and executed a dbt job, materialized the gold layer in the Fabric Data Warehouse, and applied a semantic model. You have successfully completed the medallion architecture from Bronze to Silver to Gold.
