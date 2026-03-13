@@ -36,6 +36,7 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
         - **Do not select** the \`flag\` folder ![alttext](Screenshots/Lab2/9.png)
 
 9. Click **Advanced settings**. 
+
 ![alttext](Screenshots/Lab2/10.png)
 
 10. Select **Audit columns** and configure the following:
