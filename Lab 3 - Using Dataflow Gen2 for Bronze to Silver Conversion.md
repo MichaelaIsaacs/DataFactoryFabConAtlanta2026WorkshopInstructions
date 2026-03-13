@@ -125,6 +125,7 @@ Configure the AI Prompt with the following values:
     \- Right-click on the tables in the left UI pane and select **Rename**. 
     ![alttext](Screenshots/Lab3/21.png). 
     Add \`silver\_\` to the beginning of each existing table name and add \`\_\` between all spaces.![alttext](Screenshots/Lab3/22.png)
+    
     \- Example: rename **retail customers** to **silver\_retail\_customers**.
     \- Zoom in on the left UI panel and verify all tables match this naming pattern exactly.
 
