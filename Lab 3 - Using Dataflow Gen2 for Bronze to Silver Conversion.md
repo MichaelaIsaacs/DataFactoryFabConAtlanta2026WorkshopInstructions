@@ -11,8 +11,8 @@ Your workspace already includes:
 
 ## Create a New Dataflow Gen2
 
-1. Go to **Initial Process** and select **New Item**. !
-[alttext](Screenshots/Lab3/1.png)
+1. Go to **Initial Process** and select **New Item**. 
+![alttext](Screenshots/Lab3/1.png)
 
 2. Select **Dataflow Gen2**.
 ![alttext](Screenshots/Lab3/2.png)
