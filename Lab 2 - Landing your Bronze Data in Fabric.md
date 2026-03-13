@@ -24,7 +24,7 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 
 7. Enter the following values:
 
-    - **URL**: \`https://zavarawdata1.dfs.core.windows.net/`
+    - **URL**: \https://zavarawdata1.dfs.core.windows.net/
     - **Connection name**: Keep the auto-populated value
     - Check **The connection can be used with on-premises data gateways and VNet Gateways**
     - Click **Next** ![alttext](Screenshots/Lab2/8.png)
