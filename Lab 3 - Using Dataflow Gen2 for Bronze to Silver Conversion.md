@@ -26,12 +26,14 @@ Your workspace already includes:
 5. Select all tables and click **Create**. The data should land in the Dataflow interface. 
 ![alttext](Screenshots/Lab3/5.png)
 
-6. Click Create.
+6. Click **Create**.
 
 7. Verify that the tables have landed in the interface. 
 ![alttext](Screenshots/Lab3/6.png)
 
 At this point, the bronze data has been ingested into the Dataflow Gen2 editor. You will now transform this data from bronze to silver using two approaches: Copilot-based transformations and UI-based transformations.
+
+
 
 ## Method One – Build the Transformation with Copilot
 
@@ -78,6 +80,8 @@ Configure the AI Prompt with the following values:
 5. Select **OK** and confirm the new column is created. 
 ![alttext](Screenshots/Lab3/13.png) ![alttext](Screenshots/Lab3/14.png)
 
+
+
 ## Method Two – Build Transformations Using the UI
 
 ### UI Transformation: Remove Duplicates
@@ -98,7 +102,7 @@ Configure the AI Prompt with the following values:
 5. You should only see the dates within the column now. 
 ![alttext](Screenshots/Lab3/18.png)
 
-\---
+
 
 ## Transformation #3: Clean Text Fields
 
@@ -112,7 +116,7 @@ Configure the AI Prompt with the following values:
 ![alttext](Screenshots/Lab3/20.png)
 
 
-\---
+
 
 ## Configure Destination: Fabric Data Warehouse (Silver Layer Output)
 
@@ -144,7 +148,7 @@ Configure the AI Prompt with the following values:
 
     \- Verify that the correct table naming is reflected.
 
-\---
+
 
 ## Lab 3 Completion
 
