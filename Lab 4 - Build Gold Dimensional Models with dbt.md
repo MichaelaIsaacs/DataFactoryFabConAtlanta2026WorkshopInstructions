@@ -14,7 +14,7 @@ This process involves standardizing logic, deduplicating records, and calculatin
 
 4. When prompted for how to start your dbt project, select **Import a project**.![alttext](Screenshots/Lab4/3.png)
 
-5. Select the provided workshop dbt project zip file named **fabric\_retail\_gold\_dbt.zip\** (provided in the pre-requisites kit) and complete the import.
+5. Select the provided workshop dbt project zip file named **fabric\_retail\_gold\_dbt.zip\** (/Users/michaelaisaacs/Desktop/DataFactoryFabConAtlanta2026WorkshopInstructions/Screenshots/fabric_retail_gold_dbt.zip) and complete the import.
 
 6. To confirm a successful import, verify that SQL models appear in the left pane of the dbt editor.![alttext](Screenshots/Lab4/4.png)
 
