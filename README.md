@@ -118,3 +118,8 @@ By completing **FabCon Labs 1–6**, you have:
 - Enforced **network isolation and outbound access controls**  
 
 The resulting solution reflects exactly the patterns and capabilities exercised in this workshop and can be re-run, extended, or secured further using the same Fabric experiences.
+
+## Completion Summary
+
+Want to try your new Data Factory knowledge? Want to win some fun prizes? Participate in our Data Factory Community Contest! Check out the [contest description[(https://community.fabric.microsoft.com/t5/AI-Ready-Data-Gallery/bd-p/df_aireadydata_gallery?featured=yes)] to learn more!
+
