@@ -35,7 +35,8 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
     - Select all tables within the CSV files
         - **Do not select** the \`flag\` folder ![alttext](Screenshots/Lab2/9.png)
 
-9. Click **Advanced settings**. ![alttext](Screenshots/Lab2/10.png)
+9. Click **Advanced settings**. 
+![alttext](Screenshots/Lab2/10.png)
 
 10. Select **Audit columns** and configure the following:
 
@@ -49,7 +50,8 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
     - **Name**: \`\_is\_deleted\`
     - **Value**: \`Custom\`  
     - **Right-hand textbox**: \`false\`
-    ![alttext](Screenshots/Lab2/11.png)
+   
+![alttext](Screenshots/Lab2/11.png)
 \---
 
 ### Configure Destination and Run
