@@ -11,12 +11,23 @@ Your workspace already includes:
 
 ## Create a New Dataflow Gen2
 
-1. Go to **Initial Process** and select **New Item**. ![alttext](Screenshots/Lab3/1.png)
-2. Select **Dataflow Gen2**.![alttext](Screenshots/Lab3/2.png)
-3. Name the Dataflow **ZavaDataflowGen2** and select **Create**. ![alttext](Screenshots/Lab3/3.png)
-4. Select **Get data from another source** and search for your ADLS bronze Lakehouse named ZavaADLSbronzelakehouse. You may need to search for it. ![alttext](Screenshots/Lab3/4.png)
-5. Select all tables and click **Create**. The data should land in the Dataflow interface. ![alttext](Screenshots/Lab3/5.png)
+1. Go to **Initial Process** and select **New Item**. !
+[alttext](Screenshots/Lab3/1.png)
+
+2. Select **Dataflow Gen2**.
+![alttext](Screenshots/Lab3/2.png)
+
+3. Name the Dataflow **ZavaDataflowGen2** and select **Create**. 
+![alttext](Screenshots/Lab3/3.png)
+
+4. Select **Get data from another source** and search for your ADLS bronze Lakehouse named ZavaADLSbronzelakehouse. You may need to search for it. 
+![alttext](Screenshots/Lab3/4.png)
+
+5. Select all tables and click **Create**. The data should land in the Dataflow interface. 
+![alttext](Screenshots/Lab3/5.png)
+
 6. Click Create.
+
 7. Verify that the tables have landed in the interface. ![alttext](Screenshots/Lab3/6.png)
 
 At this point, the bronze data has been ingested into the Dataflow Gen2 editor. You will now transform this data from bronze to silver using two approaches: Copilot-based transformations and UI-based transformations.
@@ -40,7 +51,8 @@ Replace all negative values in the Quantity column with null. ![alttext](Screens
 1. Remaining in the retail_order_items table, select the line_total column.
 2. Open **Copilot** and submit the following prompt:
 
-Create a column called RevenueTier with values: Small if LineTotal < 100, Medium if LineTotal between 100 and 1000, Large if greater than 1000. ![alttext](Screenshots/Lab3/9.png)
+Create a column called RevenueTier with values: Small if LineTotal < 100, Medium if LineTotal between 100 and 1000, Large if greater than 1000. 
+![alttext](Screenshots/Lab3/9.png)
 
 3. Verify that the RevenueTier column appears in the table.
 ![alttext](Screenshots/Lab3/10.png)
@@ -53,9 +65,9 @@ Create a column called RevenueTier with values: Small if LineTotal < 100, Medium
 4. Choose **AI Prompt**. ![alttext](Screenshots/Lab3/12.png)
 
 Configure the AI Prompt with the following values:
-- **New column name**: Clean_PhoneNumbers
-- **Selected column**: phone
-- **Prompt text**: Standardize PhoneNumber column into (XXX) XXX-XXXX format and remove non-numeric characters.
+    - **New column name**: Clean_PhoneNumbers
+    - **Selected column**: phone
+    - **Prompt text**: Standardize PhoneNumber column into (XXX) XXX-XXXX format and remove non-numeric characters.
 - Ensure only the phone column is selected.
 
 5. Select **OK** and confirm the new column is created. ![alttext](Screenshots/Lab3/13.png) ![alttext](Screenshots/Lab3/14.png)
@@ -94,30 +106,26 @@ Configure the AI Prompt with the following values:
 
 1. Let’s denote these tables as **silver**. 
 
-\- Right-click on the tables in the left UI pane and select **Rename**. ![alttext](Screenshots/Lab3/21.png). 
-Add \`silver\_\` to the beginning of each existing table name and add \`\_\` between all spaces.![alttext](Screenshots/Lab3/22.png)
-
-\- Example: rename **retail customers** to **silver\_retail\_customers**.
-
-\- Zoom in on the left UI panel and verify all tables match this naming pattern exactly.
+    \- Right-click on the tables in the left UI pane and select **Rename**. ![alttext](Screenshots/Lab3/21.png). 
+    Add \`silver\_\` to the beginning of each existing table name and add \`\_\` between all spaces.![alttext](Screenshots/Lab3/22.png)
+    \- Example: rename **retail customers** to **silver\_retail\_customers**.
+    \- Zoom in on the left UI panel and verify all tables match this naming pattern exactly.
 
 2. In the left UI panel (Named Queries), select **all tables**.
 
-\- With all tables selected, go to the **Home** tab in Dataflow Gen2.
+    \- With all tables selected, go to the **Home** tab in Dataflow Gen2.
+    \- Select **Default data destination** and click **Add**. ![alttext](Screenshots/Lab3/23.png)
 
-\- Select **Default data destination** and click **Add**. ![alttext](Screenshots/Lab3/23.png)
+3. Select your silver warehouse: **ZavaWarehouse**.!\[alttext\](Screenshots/Lab3/24.png)
 
-3. Select your silver warehouse: **ZavaWarehouse**.
+4. Select **Bind selected queries**. !\[alttext\](Screenshots/Lab3/25.png)
 
-4. Select **Bind selected queries**. ![alttext](Screenshots/Lab3/24.png)
-
-5. Select **Save & Run** in the upper-left corner to save and run your Dataflow Gen2. ![alttext](Screenshots/Lab3/25.png)
-
-\- The data will now flow seamlessly from bronze to silver with transformations applied. 
+5. Select **Save & Run** in the upper-left corner to save and run your Dataflow Gen2. 
+    \- The data will now flow seamlessly from bronze to silver with transformations applied. ![alttext](Screenshots/Lab3/26.png)
 
 6. Go to **ZavaWarehouse** and confirm that the silver data has landed.
 
-\- Verify that the correct table naming is reflected.
+    \- Verify that the correct table naming is reflected.
 
 \---
 
