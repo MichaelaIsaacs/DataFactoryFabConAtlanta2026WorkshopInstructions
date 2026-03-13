@@ -12,7 +12,7 @@ By the end of Lab 6, you will have a working solution that ingests data, transfo
 
 ---
 
-## Prerequisites
+## Prerequisites (Already Done For Lab Participants)
 
 The labs require the following setup in Microsoft Fabric:
 
