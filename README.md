@@ -121,5 +121,5 @@ The resulting solution reflects exactly the patterns and capabilities exercised 
 
 ## Completion Summary
 
-Want to try your new Data Factory knowledge? Want to win some fun prizes? Participate in our Data Factory Community Contest! Check out the [contest description](https://community.fabric.microsoft.com/t5/AI-Ready-Data-Gallery/bd-p/df_aireadydata_gallery?featured=yes)] to learn more!
+Want to try your new Data Factory knowledge? Want to win some fun prizes? Participate in our Data Factory Community Contest! Check out the [contest description](https://community.fabric.microsoft.com/t5/AI-Ready-Data-Gallery/bd-p/df_aireadydata_gallery?featured=yes) to learn more!
 
