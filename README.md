@@ -66,29 +66,31 @@ This lab demonstrates how Fabric supports low-code data preparation for analytic
 
 ---
 
-## Orchestrating Data Movement (Lab 4)
+## Building Gold Dimensional Models with dbt (Lab 4)
 
-In **Lab 4**, you bring ingestion and transformation together.
+In **Lab 4**, you build the Gold layer of the medallion architecture.
 
 You will:
-- Use Data Factory orchestration to manage data movement
-- Understand how data flows across medallion layers
-- Validate end-to-end execution across ingestion and transformation steps
+- Import a dbt project into Fabric and configure a dbt job
+- Apply business logic to Silver tables to produce curated Gold dimensions and fact tables
+- Validate Gold output in the Fabric Data Warehouse
+- Create a **Semantic Model** over the Gold layer for Power BI consumption
 
-This lab reinforces how Fabric enables coordinated, repeatable data workflows.
+This lab completes the Bronze → Silver → Gold medallion transformation pipeline.
 
 ---
 
-## Operationalizing Copy and Dataflows (Lab 5)
+## End-to-End Orchestration with Metadata (Lab 5)
 
-In **Lab 5**, you focus on operational behavior.
+In **Lab 5**, you orchestrate the full medallion pipeline using metadata-driven execution.
 
 You will:
-- Re-run and validate Copy Jobs and Dataflows
-- Observe execution behavior and monitoring signals
-- Confirm data consistency across runs
+- Build a **Medallion Orchestration Pipeline** in Fabric that chains Copy Job, Dataflow Gen2, dbt job, and Semantic Model refresh activities
+- Drive conditional execution using a **Lookup activity** reading from the metadata SQL database created in Lab 1
+- Update metadata values and observe which pipeline stages execute
+- (Optional) Explore an advanced pattern using ForEach, audit tables, and Lakehouse notebooks
 
-This lab prepares you to reason about reliability and repeatability using the Fabric experiences already introduced.
+This lab demonstrates how Fabric enables coordinated, repeatable, and operationally controllable data workflows.
 
 ---
 
@@ -115,11 +117,11 @@ By completing **FabCon Labs 1–6**, you have:
 - Ingested data using **Copy Jobs**  
 - Transformed data using **Dataflow Gen2**  
 - Written curated silver data to a **Fabric Data Warehouse**  
+- Built Gold dimensional and fact models using a **dbt job**  
+- Orchestrated the full pipeline with **metadata-driven execution**  
 - Enforced **network isolation and outbound access controls**  
 
 The resulting solution reflects exactly the patterns and capabilities exercised in this workshop and can be re-run, extended, or secured further using the same Fabric experiences.
-
-## Completion Summary
 
 Want to try your new Data Factory knowledge? Want to win some fun prizes? Participate in our Data Factory Community Contest! Check out the [contest description](https://community.fabric.microsoft.com/t5/AI-Ready-Data-Gallery/bd-p/df_aireadydata_gallery?featured=yes) to learn more!
 
