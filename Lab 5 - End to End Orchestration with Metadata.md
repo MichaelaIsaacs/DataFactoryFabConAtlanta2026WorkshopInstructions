@@ -17,7 +17,7 @@ In this lab, you will build a **medallion orchestration pipeline from scratch** 
     * Setup your connection: select **browse all** and then click **copy job** from the **new sources** section.![alttext](Screenshots/Lab5/6.png)
     * Ensure the connection from the dropdown says "**Create new connection**".![alttext](Screenshots/Lab5/7.png)
     * You will need to click **Sign in** to authenticate. Click **Connect**.
-    * The **workspace** should be `zava_analytics` and the **copy job** selection should be `zavadatacopyjob`.![alttext](Screenshots/Lab5/8.png)
+    * The **workspace** should be `zava_analytics` and the **copy job** selection should be `Zavadataadlscopyjob`.![alttext](Screenshots/Lab5/8.png)
 9.  Now go back to configuring the **If Condition** – click on the If Condition box. Under the **General** tab, name the If Condition, "**Run Copy Job**".
 10. Within the **Activities** section, input the following expression:  
     `@equals(activity('Lookup Metadata').output.value[0].value, 1)` 
@@ -79,7 +79,7 @@ Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
 3. Copy and paste the following into the query:
     ```sql
     UPDATE dbo.metadata SET value = 0 WHERE item = 'copyjob';
-    UPDATE dbo.metadata SET value = 0 WHERE item = 'dataflow';
+    UPDATE dbo.metadata SET value = 0 WHERE item = 'dataflowgen2';
     UPDATE dbo.metadata SET value = 0 WHERE item = 'dbtjob';
     UPDATE dbo.metadata SET value = 1 WHERE item = 'semanticmodel';
     ```
@@ -182,7 +182,8 @@ Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
 5.  **Build Metadata Pipeline**:
     * Create a Pipeline named `Metadata_Driven_Pipeline`.
     * Add a **Lookup activity** named `Lookup_Metadata`. Under settings, select connection `zava_lakehouse` and table `dbo.datasetprocessconfig`.![alttext](Screenshots/Lab5/37.png)
-    * Add a **ForEach activity** on success by clicking the green arrow within the Lookup acgivity.![alttext](Screenshots/Lab5/38.png)
+    * Add a **ForEach activity** on success by clicking the green arrow within the Lookup activity.![alttext](Screenshots/Lab5/38.png)
+    * In the ForEach **Settings** tab, set **Items** to `@activity('Lookup_Metadata').output.value`.
     * Inside the ForEach, add an **If Condition activity** with the expression: `@equals(item().run_gold, true)`.![alttext](Screenshots/Lab5/38.png)
     * In the **True** branch, add the `03_Gold_Aggregation_Notebook` activity and add base parameters.![alttext](Screenshots/Lab5/39.png)
 6.  **Validate**: Save and run the pipeline.![alttext](Screenshots/Lab5/40.png)

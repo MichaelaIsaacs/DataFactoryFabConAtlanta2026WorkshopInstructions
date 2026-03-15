@@ -57,7 +57,7 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 
 11. Select \`ZavaADLSbronzelakehouse\` as the output destination. ![alttext](Screenshots/Lab2/12.png)
 
-12. Choose ***Incremental copy** to detect and ingest all incremental changes, then click **Next**. ![alttext](Screenshots/Lab2/13.png)
+12. Choose **Incremental copy** to detect and ingest all incremental changes, then click **Next**. ![alttext](Screenshots/Lab2/13.png)
 
 13. Under **Table mapping**, edit the schema name to \`retail\`, then click **Next**. ![alttext](Screenshots/Lab2/14.png)
 
