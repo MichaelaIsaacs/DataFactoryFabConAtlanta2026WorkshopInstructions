@@ -40,12 +40,12 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 10. Select **Audit columns** and configure the following:
 
     - **Name**: \`\_ingestion\_timestamp\`
-        - **Value**: \`$$NOW\`
+        - **Value**: \`Now\`
     - **Name**: \`\_source\_file\`
         - **Value**: \`Custom\`
         - **Right-hand textbox**: \`products.csv\`
     - **Name**: \`\_batch\_id\`
-         - **Value**: \`$$COPYJOBID\`
+         - **Value**: \`Copy Job ID\`
     - **Name**: \`\_is\_deleted\`
         - **Value**: \`Custom\`  
         - **Right-hand textbox**: \`false\`
