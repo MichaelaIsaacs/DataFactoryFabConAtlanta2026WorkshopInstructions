@@ -5,19 +5,19 @@ Set up your Lakehouse and Warehouse for the Medallion architecture with secure b
 In this lab, you will prepare the core data assets used throughout the workshop. You’ll create a Lakehouse for your Landing (Bronze) layer and a Warehouse for the Silver/Gold layers, orchestrate them using a Task Flow, and finish by setting up the metadata database needed for downstream automation.
 
 ## Create the Lakehouse and Warehouse using a Task Flow
-1. Begin in [https://fabric.microsoft.com](https://fabric.microsoft.com). Please create your own workspace – you should already be provisioned a Fabric capacity for the purpose of this lab.
-2. To do so, please click **"New workspace"**.![alttext](Screenshots/Lab1Photos/1.png)
-3. Please name your workspace **"zava_analytics[_yourusername]"** (for the purpose of the lab screenshots, we will just be naming our workspace **zava_analytics**).
-4. Please select **Power BI Premium** as your workspace. ![alttext](Screenshots/Lab1Photos/2.png)
-5. Please confirm and select via the drop-down that you have access to this capacity **fabcon-gen-westus-p2-0***. ![alttext](Screenshots/Lab1Photos/3.png)
-6. Click **apply**. ![alttext](Screenshots/Lab1Photos/4.png)
-7. Click **Select a predesignated task flow**, then choose **Medallion** and click **select**. ![alttext](Screenshots/Lab1Photos/5.png) ![alttext](Screenshots/Lab1Photos/6.png)
-8. You should now see a templated medallion flow in your UI. ![alttext](Screenshots/Lab1Photos/7.png)
-9. Under your **Bronze Data Icon**, select **New Item**. ![alttext](Screenshots/Lab1Photos/8.png)
-10. Select the **Lakehouse** item and name it **“ZavaBronzeLakehouse”**. Click **Create**. ![alttext](Screenshots/Lab1Photos/9.png)
-11. Once added, return to your workspace.
-12. Select from **Silver Data icon** in the medallion flow, then choose **New Item**. ![alttext](Screenshots/Lab1Photos/10.png)
-13. Choose a **Warehouse**, name it **“ZavaWarehouse”**, and click **create**.![alttext](Screenshots/Lab1Photos/11.png)
+1. Begin in [https://fabric.microsoft.com](https://fabric.microsoft.com). Please create your own workspace – you should already be provisioned a Fabric capacity for the purpose of this lab. You can find your tenant login information via the workshop moderators. 
+3. To do so, please click **"New workspace"**.![alttext](Screenshots/Lab1Photos/1.png)
+4. Please name your workspace **"zava_analytics[_yourusername]"** (for the purpose of the lab screenshots, we will just be naming our workspace **zava_analytics**).
+5. Please select **Power BI Premium** as your workspace. ![alttext](Screenshots/Lab1Photos/2.png)
+6. Please confirm and select via the drop-down that you have access to this capacity **fabcon-gen-westus-p2-0***. ![alttext](Screenshots/Lab1Photos/3.png)
+7. Click **apply**. ![alttext](Screenshots/Lab1Photos/4.png)
+8. Click **Select a predesignated task flow**, then choose **Medallion** and click **select**. ![alttext](Screenshots/Lab1Photos/5.png) ![alttext](Screenshots/Lab1Photos/6.png)
+9. You should now see a templated medallion flow in your UI. ![alttext](Screenshots/Lab1Photos/7.png)
+10. Under your **Bronze Data Icon**, select **New Item**. ![alttext](Screenshots/Lab1Photos/8.png)
+11. Select the **Lakehouse** item and name it **“ZavaBronzeLakehouse”**. Click **Create**. ![alttext](Screenshots/Lab1Photos/9.png)
+12. Once added, return to your workspace.
+13. Select from **Silver Data icon** in the medallion flow, then choose **New Item**. ![alttext](Screenshots/Lab1Photos/10.png)
+14. Choose a **Warehouse**, name it **“ZavaWarehouse”**, and click **create**.![alttext](Screenshots/Lab1Photos/11.png)
 
 ## Create a Fabric SQL Database to store metadata
 Now we will add a Fabric SQL Database to store metadata. This will be useful in our pipelines and orchestration procedures selected later today.
