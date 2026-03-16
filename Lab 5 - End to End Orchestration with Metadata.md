@@ -104,7 +104,7 @@ Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
     spark.sql("SELECT * FROM dbo.silver_sales_orders").show()
     ```
     ![alttext](Screenshots/Lab5/34.png)
-3.  **Setup Control Plane**: Create a new Notebook named `02_Create_Metadata_And_Audit`. Use the following code to create metadata and audit tables, then click **Run all**:
+3.  **Setup Control Plane**: Go back to your Lakehouse. Click **New Item** and select **Notebook**. Create a new Notebook named `02_Create_Metadata_And_Audit`. Use the following code to create metadata and audit tables, then click **Run all**:
     ```python
     spark.sql("""CREATE TABLE IF NOT EXISTS dbo.DatasetProcessConfig (
       dataset_name     STRING,
@@ -135,7 +135,7 @@ Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
     ```
     You should see the following output:![alttext](Screenshots/Lab5/35.png)
 
-4.  **Gold Aggregation Logic**: Create a Notebook named `03_Gold_Aggregation_Notebook`. Use the code below and click **Run all**:
+4.  **Gold Aggregation Logic**: Go back to your Lakehouse. Click **New Item** and select **Notebook**. Create a Notebook named `03_Gold_Aggregation_Notebook`. Use the code below and click **Run all**:
     ```python
     # These values are injected by the Pipeline "Base parameters"
     dataset_name = "dbo.silver_sales_orders"
