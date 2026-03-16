@@ -7,13 +7,9 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 
 ### Create and Configure the Source (ADLS Gen2)
 
-1. Under the **Bronze data medallion** item, click **New item** and select **Lakehouse**.![alttext](Screenshots/Lab2/1.png) ![alttext](Screenshots/Lab2/2.png)
+1. Go back to your workspace. Under **High-volume data ingestion**, click **New item**. ![alttext](Screenshots/Lab2/4.png)
 
-2. Name the Lakehouse \`ZavaADLSbronzelakehouse\` and click **Create**. ![alttext](Screenshots/Lab2/3.png)
-
-3. Go back to your workspace. Under **High-volume data ingestion**, click **New item**. ![alttext](Screenshots/Lab2/4.png)
-
-4. Select **Copy job**, name it \`Zavadataadlscopyjob\`, and click **Create**.![alttext](Screenshots/Lab2/5.png)
+2. Select **Copy job**, name it \`Zavadataadlscopyjob\`, and click **Create**.![alttext](Screenshots/Lab2/5.png)
 
 
 ### Configure the Data Source
@@ -39,23 +35,23 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 
 10. Select **Audit columns** and configure the following:
 
-    - **Name**: \`\_ingestion\_timestamp\`
-        - **Value**: \`$$NOW\`
-    - **Name**: \`\_source\_file\`
+    - **Name**: \`_ingestion_timestamp`
+        - **Value**: \`Now`
+    - **Name**: \`_source_file`
         - **Value**: \`Custom\`
         - **Right-hand textbox**: \`products.csv\`
-    - **Name**: \`\_batch\_id\`
-         - **Value**: \`$$COPYJOBID\`
-    - **Name**: \`\_is\_deleted\`
+    - **Name**: \`_batch_id`
+         - **Value**: \`Copy Job ID`
+    - **Name**: \`_is_deleted`
         - **Value**: \`Custom\`  
         - **Right-hand textbox**: \`false\`
-   
+
 ![alttext](Screenshots/Lab2/11.png)
 
 
 ### Configure Destination and Run
 
-11. Select \`ZavaADLSbronzelakehouse\` as the output destination. ![alttext](Screenshots/Lab2/12.png)
+11. Select \`ZavaBronzeLakehouse` as the output destination. ![alttext](Screenshots/Lab2/12.png)
 
 12. Choose **Incremental copy** to detect and ingest all incremental changes, then click **Next**. ![alttext](Screenshots/Lab2/13.png)
 
@@ -65,11 +61,11 @@ In this lab, you will ingest your data from **Azure Data Lake Storage Gen2 (ADLS
 
 15. Select **Run**.
 
-16. Your data should now successfully use the Copy Job to ingest Bronze data from ADLS Gen2 into your \`ZavaADLSbronzelakehouse\`.
+16. Your data should now successfully use the Copy Job to ingest Bronze data from ADLS Gen2 into your \`ZavaBronzeLakehouse\`.
 
 ![alttext](Screenshots/Lab2/17.png)
 
-## Testing CDC Behavior
+## Testing CDC Behavior (Optional)
 
 The workshop monitors will notify you when it is time to proceed. The monitors will push changes to the ADLS Gen2, giving the Copy Job changes to copy over via CDC. We will tell you when it is time to proceed. 
 

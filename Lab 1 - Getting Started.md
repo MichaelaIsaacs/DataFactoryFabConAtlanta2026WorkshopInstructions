@@ -19,11 +19,13 @@ In this lab, you will prepare the core data assets used throughout the workshop.
 12. Select from **Silver Data icon** in the medallion flow, then choose **New Item**. ![alttext](Screenshots/Lab1Photos/10.png)
 13. Choose a **Warehouse**, name it **“ZavaWarehouse”**, and click **create**.![alttext](Screenshots/Lab1Photos/11.png)
 
+14. Once created, return to your workspace. 
+
 ## Create a Fabric SQL Database to store metadata
-Now we will add a Fabric SQL Database to store metadata. This will be useful in our pipelines and orchestration procedures selected later today.
+
+Now we will add a Fabric SQL Database to store metadata. This will be useful in our pipelines and orchestration procedures selected later today. 
 1. At the top of the workspace, click on **New Item**. ![alttext](Screenshots/Lab1Photos/12.png)
 2. Search for and select **SQL Database**, then name it **“ZavaMetadataDB”**, and click **Create**. Fabric will provision the SQL Database. ![alttext](Screenshots/Lab1Photos/13.png)
-3. Within the "Build your database" scroll, select `T-SQL`. ![alttext](Screenshots/Lab1Photos/14.png)
 
 ## Populate the Metadata tables
 1. Now let’s populate these tables. Within T-SQL for `ZavaMetadataDB`, click on **new query**. ![alttext](Screenshots/Lab1Photos/15.png)

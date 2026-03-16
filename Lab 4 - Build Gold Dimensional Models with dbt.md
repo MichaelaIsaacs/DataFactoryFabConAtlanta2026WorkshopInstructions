@@ -35,14 +35,14 @@ This transformation provides a foundation for handling inconsistent data types a
 
 This transformation builds the staging layer. These models are materialized as views to keep data fresh while minimizing storage footprint.
 
-- `stg\_retail\_customer.sql\`
+- `stg_retail_customer.sql`
     - Concatenates \`first\_name\` and \`last\_name\` into a single \`customer\_name\`
     -  Standardizes email values to lowercase
     -  Uses \`COALESCE\` to prioritize cleaned phone numbers over raw phone data
-- `stg\_retail\_products.sql\`
+- `stg_retail_products.sql`
     -  Renames the generic \`name\` column to \`product\_name\`
     -  Casts \`unit\_price\` and \`cost\` to strict decimal precision (18,2) to ensure financial accuracy
-- `stg\_retail\_order\_items.sql\`
+- `stg_retail_order_items.sql`
     - Converts timestamps into clear date formats
     - Ensures \`quantity\` is cast as an integer for reliable mathematical operations
 
@@ -52,11 +52,11 @@ All three staging models apply a shared transformation by calling the \`is\_not\
 
 These models are materialized as tables to maximize query performance.
 
-- `dim\_customer.sql\`
+- `dim_customer.sql`
     - Uses a \`ROW\_NUMBER()\` window function to deduplicate customer records
     - Ensures only the most recent registration per \`customer\_id\` is retained
 
-- `dim\_product.sql\`
+- `dim_product.sql`
     - Applies similar deduplication logic for products
     - Introduces a new business metric called \`unit\_margin\`, calculated as \`list\_price - cost\`
     - Enables analysis of potential profit per item before sales occur
@@ -77,9 +77,9 @@ This transformation creates the central sales fact table.
 
 The project is configured to ensure all data lands in the correct schemas automatically.
 
-    - Schema Routing: \`dbt\_project.yml\` routes staging and gold models into dedicated schemas, avoiding the \`dbo\` schema entirely
-
-    - Source Mapping: \`sources.yml\` defines the silver schema as the starting point for all dbt models
+    - Schema Routing: `dbt_project.yml` routes staging and gold models into dedicated schemas, avoiding the `dbo` schema entirely
+    
+    - Source Mapping: `sources.yml` defines the silver schema as the starting point for all dbt models
 
 
 ## Configure the dbt Job in Fabric
@@ -88,9 +88,9 @@ The project is configured to ensure all data lands in the correct schemas automa
 
 2. Select **ZavaWarehouse** as the warehouse to access silver data.![alttext](Screenshots/Lab4/6.png)
 
-3. Ensure the schema is set to **dbo** and click **Apply**.![alttext](Screenshots/Lab4/7.png)
+3. Ensure the schema is set to **dbo** and click **Apply**. Hit the **Save** button.![alttext](Screenshots/Lab4/7.png)
 
-4. Edit the job to run a full **dbt build**, executing all models and dependencies, including gold models.![alttext](Screenshots/Lab4/8.png)
+4. Select **dbt build** under command dropdown.![alttext](Screenshots/Lab4/8.png)
 
 ## Run the dbt Job and Validate Gold Output
 

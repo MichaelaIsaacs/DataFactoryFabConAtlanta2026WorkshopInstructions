@@ -20,10 +20,10 @@ Your workspace already includes:
 3. Name the Dataflow **ZavaDataflowGen2** and select **Create**. 
 ![alttext](Screenshots/Lab3/3.png)
 
-4. Select **Get data from another source** and search for your ADLS bronze Lakehouse named ZavaADLSbronzelakehouse. You may need to search for it. 
+4. Select **Get data from another source** and search for your ADLS bronze Lakehouse named **ZavaBronzeLakehouse**. You may need to search for it. 
 ![alttext](Screenshots/Lab3/4.png)
 
-5. Select all tables and click **Create**. The data should land in the Dataflow interface. 
+5. Select **5 tables** (retail.customer, retail.inventory, retail.order_items, retail.products, retail.stores) as demonstrated in the screenshot and click **Create**. The data should land in the Dataflow interface. 
 ![alttext](Screenshots/Lab3/5.png)
 
 6. Click **Create**.
@@ -31,7 +31,7 @@ Your workspace already includes:
 7. Verify that the tables have landed in the interface. 
 ![alttext](Screenshots/Lab3/6.png)
 
-At this point, the bronze data has been ingested into the Dataflow Gen2 editor. You will now transform this data from bronze to silver using two approaches: Copilot-based transformations and UI-based transformations.
+At this point, the bronze data has been selected into the Dataflow Gen2 editor. You will now transform this data from bronze to silver using two approaches: Copilot-based transformations and UI-based transformations.
 
 
 
@@ -44,7 +44,7 @@ At this point, the bronze data has been ingested into the Dataflow Gen2 editor. 
 
 1. In the left query pane, select the retail_order_items table.
 2. Select the quantity column.
-3. Open Copilot and submit the following prompt: "Replace all negative values in the Quantity column with null."
+3. Open Copilot and submit the following prompt: "Replace all negative values in the Quantity column with null".
 ![alttext](Screenshots/Lab3/8.png)
 
 4. Confirm the transformation is applied successfully.
@@ -52,7 +52,7 @@ At this point, the bronze data has been ingested into the Dataflow Gen2 editor. 
 ### Copilot Transformation: Create Revenue Buckets
 
 1. Remaining in the retail_order_items table, select the line_total column.
-2. Open **Copilot** and submit the following prompt:"Create a column called RevenueTier with values: Small if LineTotal < 100, Medium if LineTotal between 100 and 1000, Large if greater than 1000."
+2. Open **Copilot** and submit the following prompt: "Create a column called RevenueTier with values: Small if LineTotal < 100, Medium if LineTotal between 100 and 1000, Large if greater than 1000".
 
 ![alttext](Screenshots/Lab3/9.png)
 
@@ -71,7 +71,7 @@ At this point, the bronze data has been ingested into the Dataflow Gen2 editor. 
 Configure the AI Prompt with the following values:
     - **New column name**: Clean_PhoneNumbers
     - **Selected column**: phone (Ensure only the phone column is selected)
-    - **Prompt text**: Standardize PhoneNumber column into (XXX) XXX-XXXX format and remove non-numeric characters.
+    - **Prompt text**: "Standardize PhoneNumber column into (XXX) XXX-XXXX format and remove non-numeric characters".
 
 
 5. Select **OK** and confirm the new column is created. 
@@ -79,7 +79,7 @@ Configure the AI Prompt with the following values:
 
 
 
-## Method Two – Build Transformations Using the UI
+## Method Two – Build Transformations Using the UI (Optional)
 
 ### UI Transformation: Remove Duplicates
 
@@ -127,7 +127,7 @@ Configure the AI Prompt with the following values:
     
     Example: rename **retail customers** to **silver\_retail\_customers**. Zoom in on the left UI panel and verify all tables match this naming pattern exactly.
 
-2. In the left UI panel (Named Queries), select **all tables**.
+2. In the left UI panel (Queries), select **all tables**.
 
     - With all tables selected, go to the **Home** tab.
     - Select **Default data destination** and click **Add**. 

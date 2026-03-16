@@ -21,7 +21,7 @@ In this lab, you will build a **medallion orchestration pipeline from scratch** 
 9.  Now go back to configuring the **If Condition** – click on the If Condition box. Under the **General** tab, name the If Condition, "**Run Copy Job**".
 10. Within the **Activities** section, input the following expression:  
     `@equals(activity('Lookup Metadata').output.value[0].value, 1)` 
-Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
+    Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
 11. Add the **bronze to silver transformation**, using **Dataflow Gen2**:
     * Click the green arrow at the bottom right of the "**Run Copy Job**" If condition.![alttext](Screenshots/Lab5/10.png)
     * Select **If Condition**.![alttext](Screenshots/Lab5/11.png)
@@ -42,7 +42,7 @@ Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
     * Configure the new **If Condition** for this dbt job. Under the **General** tab, name it "**Run dbt job**".
     * Under the **Activities** tab, input the expression:  
         `@equals(activity('Lookup Metadata').output.value[2].value, 1)`
-    Your pipeline should now look like this:![alttext](Screenshots/Lab5/17.png)
+        Your pipeline should now look like this:![alttext](Screenshots/Lab5/17.png)
 13. Add the **semantic model**:
     * Click the green arrow at the bottom of the dbt job if condition box.
     * Click **If Condition** as the new activity.![alttext](Screenshots/Lab5/18.png)
@@ -54,28 +54,39 @@ Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
     * Configure the Semantic Model **If Condition**. Within **General**, name it "**Refresh Semantic Model**".
     * Under **Activities**, ensure the expression is:  
         `@equals(activity('Lookup Metadata').output.value[3].value, 1)`
-    Your Pipeline should now look like this: ![alttext](Screenshots/Lab5/22.png)
+        Your Pipeline should now look like this: ![alttext](Screenshots/Lab5/22.png)
 ---
 
 ## 2. Setup Metadata Driven Execution
 
-1.  Add a **Lookup activity** at the start of the pipeline. Select **Lookup** from the UI activities banner.![alttext](Screenshots/Lab5/23.png)
-2.  Drag it to the left of the bronze ingestion/copy job activity and name it **Lookup Metadata**.![alttext](Screenshots/Lab5/24.png)
-3.  Configure the Lookup to read from the metadata table:
-    * Under the **Settings** tab, click on the **Connection** dropdown. Click **browse all**.
-    * Search for and select `ZavaMetadataDB`.![alttext](Screenshots/Lab5/25.png)
-    * For the table, within the dropdown, select `dbo.metadata`.
-    * Make sure "**first row only**" is **not selected**. Click **enter manually**.![alttext](Screenshots/Lab5/26.png)
-4.  Drag the **green arrow** on the outside edge of the metadata lookup activity towards the first If Condition (Run Copy Job) so that your metadata lookup runs "**on success**".![alttext](Screenshots/Lab5/27.png)
-5.  Go to **Home** and click the purple **save** icon.
+1. Add a **Lookup activity** at the start of the pipeline. Select **Lookup** from the UI activities banner.![alttext](Screenshots/Lab5/23.png)
+
+2. Drag it to the left of the bronze ingestion/copy job activity and name it **Lookup Metadata**. *(Please ensure the name of the lookup activity is "Lookup metadata")*![alttext](Screenshots/Lab5/24.png)
+
+3. Configure the Lookup to read from the metadata table:
+   * Under the **Settings** tab, click on the **Connection** dropdown. Click **browse all**.
+   * Search for and select `ZavaMetadataDB`.![alttext](Screenshots/Lab5/25.png)
+   * For the table, within the dropdown, select `dbo.metadata`.
+   * Make sure "**first row only**" is **not selected**. Click **enter manually**.![alttext](Screenshots/Lab5/26.png)
+
+4. Drag the **green arrow** on the outside edge of the metadata lookup activity towards the first If Condition (Run Copy Job) so that your metadata lookup runs "**on success**".![alttext](Screenshots/Lab5/27.png)
+
+5. Go to **Home** and click the purple **save** icon.
    * If you run into a “pipeline validation output error” that states you have “invalid activities”, please call over the moderator to assist. However, outside of this lab, one could issue saving, without error resolution being completed, by clicking “deactivate activities” in the bottom right.![alttext](Screenshots/Lab5/28.png)
+
+   *Note: You may see an error in dbt activity if you choose to run the pipeline since it is rolling out in the week of FabCon and should be completly functional in a week.* 
+   `{"errorCode":"20415","message":"dbt failed to find a command type in the command payload.","failureType":"UserError","target":"DbtItem","details":[]}`
 
 ---
 
 ## 3. Update your Metadata Database
 
+Let's control the pipeline execution through the external metadata. 
+
 1. Go back to your workspace and find your database for metadata `ZavaMetadataDB`.
+
 2. Click **New Query** on the top UI Panel.![alttext](Screenshots/Lab5/29.png)
+
 3. Copy and paste the following into the query:
     ```sql
     UPDATE dbo.metadata SET value = 0 WHERE item = 'copyjob';
@@ -83,8 +94,14 @@ Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
     UPDATE dbo.metadata SET value = 0 WHERE item = 'dbtjob';
     UPDATE dbo.metadata SET value = 1 WHERE item = 'semanticmodel';
     ```
-4.  Name the query "**update item**" and click **Run**.![alttext](Screenshots/Lab5/30.png)![alttext](Screenshots/Lab5/31.png)
-5.  Go back to your "**Medallion Orchestration Pipeline**" and click **Run**.![alttext](Screenshots/Lab5/32.png)
+
+4. Name the query "**update item**" and click **Run**.![alttext](Screenshots/Lab5/30.png)![alttext](Screenshots/Lab5/31.png)
+
+5. Go back to your "**Medallion Orchestration Pipeline**" and click **Run**.![alttext](Screenshots/Lab5/32.png)
+
+6. Ensure that only **Lookup**, all "**if**" activities and **“Report from gold”** activity are executed, while other **inner activities** in the “if” activity are not, as we can control the activity state through external metadata.  
+
+    ![image-20260316014223924](Screenshots/Lab5/42.png)
 
 ---
 
@@ -113,13 +130,13 @@ Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
       force_rerun      BOOLEAN,
       active           BOOLEAN
     ) USING DELTA""")
-
+    
     spark.sql("DELETE FROM dbo.DatasetProcessConfig WHERE dataset_name = 'dbo.silver_sales_orders'")
-
+    
     spark.sql("""INSERT INTO dbo.DatasetProcessConfig
     (dataset_name, run_gold, aggregation_type, force_rerun, active)
     VALUES ('dbo.silver_sales_orders', true, 'TOTAL_BY_REGION', false, true)""")
-
+    
     spark.sql("""CREATE TABLE IF NOT EXISTS dbo.DatasetRunAudit (
       pipeline_run_id   STRING,
       pipeline_name     STRING,
@@ -130,7 +147,7 @@ Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
       end_time          TIMESTAMP,
       error_message     STRING
     ) USING DELTA""")
-
+    
     spark.sql("SHOW TABLES IN dbo").show(truncate=False)
     ```
     You should see the following output:![alttext](Screenshots/Lab5/35.png)
@@ -142,14 +159,14 @@ Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
     aggregation_type = "TOTAL_BY_REGION"
     pipeline_name = ""
     pipeline_run_id = ""
-
+    
     from datetime import datetime
     from pyspark.sql import functions as F
-
+    
     start_time = datetime.utcnow()
     status = "Succeeded"
     error_message = None
-
+    
     try:
         df = spark.table(dataset_name)
         if aggregation_type == "TOTAL_BY_REGION":
@@ -163,15 +180,15 @@ Your pipeline should now look like this:![alttext](Screenshots/Lab5/9.png)
     except Exception as e:
         status = "Failed"
         error_message = str(e)
-
+    
     end_time = datetime.utcnow()
-
+    
     spark.sql(f"""INSERT INTO dbo.DatasetRunAudit
     (pipeline_run_id, pipeline_name, dataset_name, aggregation_type, status, start_time, end_time, error_message)
     VALUES ('{pipeline_run_id}', '{pipeline_name}', '{dataset_name}', '{aggregation_type}', '{status}', 
      TIMESTAMP('{start_time.isoformat()}'), TIMESTAMP('{end_time.isoformat()}'), 
      {("NULL" if error_message is None else "'" + error_message.replace("'", "''") + "'")})""")
-
+    
     spark.sql("SELECT * FROM dbo.gold_sales_orders").show()
     spark.sql("SELECT dataset_name, aggregation_type, status FROM dbo.DatasetRunAudit").show(truncate=False)
     ```
